@@ -1,23 +1,23 @@
 import React, {useEffect, useState} from "react";
 import API from "../utils/API.js";
 import Table from "./Table.js";
-import TableRow from "./TableRow.js";
-
+import empData from "../utils/empData.json"
+// change to class component 
 const EmployeeDirectory = () => {
     // define use state
-    useEffect(() => {
-        API.searchName().then(user => {
-          console.log(user)
-        //   set user state
-          //add in reposnse here that renders to page name, email, phone, cell, thumbnail
-        })
-    }, []);
+    const [userState, setUserState] = useState(empData);
+    // useEffect(() => {
+    //     API.searchName().then(user => {
+    //       setUserState(user);
+    //         console.log(user);
+    //     //   set user state
+    //       //add in reposnse here that renders to page name, email, phone, cell, thumbnail
+    //     })
+    // }, [userState]);
 return (
     <div>
-        <Table />
+        <Table data={userState}/>
         {/* pass down state as a prop */}
-        <TableRow /> 
-        Hi
     </div>
 )
 };

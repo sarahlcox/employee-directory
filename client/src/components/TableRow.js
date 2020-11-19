@@ -1,28 +1,29 @@
 import React from "react";
 
 // need to set state for employees ? 
-const TableRow = () => {
-
+const TableRow = (props) => {
+console.log(props);
+console.log(props.empData.results);
+// keep console logging 
 return (
     <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Cell</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Picture</td>
-                  <td>Name</td>
-                  <td>Email</td>
-                  <td>Phone</td>
-                  <td>Cell</td>
-                </tr>
+        {!props.empData ? (<h4>loading...</h4>):(
+            props.empData.results.map(result => (<td>{result.name}</td>))
+        )}
+    </div>)
+    // <div>
+    //     {/* function that either makes the map wait until data or returns "loading" */}
+    //     {!props.data ? (<h4>loading!</h4>) : (
+    //     props.data.results.map(function (response){
+    //           <tr>
+    //           <td>Picture</td>
+    //           <td>Name</td>
+    //           <td>{response.email}</td>
+    //           <td>Phone</td>
+    //           <td>Cell</td>
+    //         </tr>
+    //     })
+    //     )}
 
 
             {/* {this.state.employees.map(function (response) {
@@ -44,9 +45,7 @@ return (
                 </tr>
               );
             })} */}
-          </tbody>
-        </table>    
-    </div>)
+    // </div>)
 };
 
 export default TableRow;
