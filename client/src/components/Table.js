@@ -27,7 +27,6 @@ return (
                 // {Array.from({ length: 12 }).map((_, index) => (
                 //   <td key={index}>Table cell {index}</td>
                 // ))}
-
                 <tr key={response.id}>
                   <td>
                     <img alt="employee picture" src={response.results.picture.thumbnail}></img>
