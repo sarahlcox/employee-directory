@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import API from "../utils/API.js";
 import SearchBar from "./SearchBar";
 import Table from "./Table.js";
 import empData from "../utils/empData.json";
@@ -10,10 +9,9 @@ class EmployeeDirectory extends Component {
     // define use state
     state = {
         name: "",
-        user: []
+        employees: []
     }
     componentDidMount () {
-        console.log("hi")
         // empData.searchName().then(response => {
         //     console.log(response);
         //   this.setState({ user : response.data.results });
@@ -27,18 +25,44 @@ class EmployeeDirectory extends Component {
         console.log("search submitted");
         const name = event.target.name;
         const value = event.target.value;
-        this.setState({
-          [name]: value
+        let filteredEmp = empData.results.filter(employee => {
+            if (employee.name.first.toLowerCase().includes(value.toLowerCase()) || employee.name.last.toLowerCase().includes(value.toLowerCase())) {
+              return employee;
+            }
         });
-      };
+        this.setState({
+          [name]: value,
+          employees: filteredEmp
+        });
+        console.log(this.state.employees);
+    this.render();
+    }
+
+handleSort = () => {
+    console.log("handling sort");
+    let sortedList=this.state.employees.slice();
+    sortedList.sort((a, b) => {
+        let fullNameA=a.name.first + a.name.last;
+        let fullNameB=b.name.first + b.name.last;
+        if (fullNameA < fullNameB)
+            return -1;
+        if (fullNameB < fullNameA)
+            return 1;
+        return 0;
+    });
+    
+    console.log(sortedList);
+    this.setState({
+        employees: sortedList
+      });
+    this.render();
+}
 
     render (){
-        console.log("hi2");
-        console.log(empData);
         return (
             <div>
                 <SearchBar data={this}/>
-                <Table empData={empData}/>
+                <Table empData={this.state.employees} handler={this.handleSort}/>
             </div>
         )}
 };

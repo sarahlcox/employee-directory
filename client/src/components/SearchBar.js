@@ -9,7 +9,7 @@ function SearchBar(props) {
         <label htmlFor="employee-directory">Search:</label>
         <input
           value={props.data.state.name}
-          onChange={props.handleInputChange}
+          onChange={props.data.handleInputChange}
           name="name"
           list="term"
           type="text"
