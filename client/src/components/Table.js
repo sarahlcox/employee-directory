@@ -7,7 +7,7 @@ return (
           <thead>
             <tr>
               <th>Photo</th>
-              <th><button onClick={props.handler}>Name</button></th>
+              <th onClick={props.handler}>Name</th>
               <th>Email</th>
               <th>Phone</th>
               <th>Cell</th>
