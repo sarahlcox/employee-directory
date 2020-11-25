@@ -9,7 +9,7 @@ return (
           <thead>
             <tr>
               <th>Photo</th>
-              <th onClick={props.handler}>Name</th>
+              <th className="name-toggle" onClick={props.handler}>Name</th>
               <th>Email</th>
               <th>Phone</th>
               <th>Cell</th>
