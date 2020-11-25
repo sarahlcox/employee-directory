@@ -11,16 +11,7 @@ class EmployeeDirectory extends Component {
         employees: [],
         sortAscending:false
     }
-    // componentDidMount () {
-    //     // empData.searchName().then(response => {
-    //     //     console.log(response);
-    //     //   this.setState({ user : response.data.results });
-    //     //     console.log(this.state.user);
-    //     // //   set user state
-    //     //   //add in response here that renders to page name, email, phone, cell, thumbnail
-    //     // })
-    // }
-
+    
     handleInputChange = event => {
         console.log("search submitted");
         const name = event.target.name;
