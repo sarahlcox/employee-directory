@@ -1,9 +1,11 @@
 import React from "react";
+import "./style.css";
 
 const Table = (props) => {
   console.log(props);
 return (
-    <table border="1">
+    <div className="container">
+      <table className="table">
           <thead>
             <tr>
               <th>Photo</th>
@@ -27,7 +29,8 @@ return (
             )
             )}
           </tbody>
-    </table>    
+      </table>
+    </div>    
       );
   };
 

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import SearchBar from "./SearchBar";
 import Table from "./Table.js";
 import empData from "../utils/empData.json";
+import "./style.css";
 
 class EmployeeDirectory extends Component {
     // define use state
