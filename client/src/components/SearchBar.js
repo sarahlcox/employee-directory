@@ -15,7 +15,7 @@ function SearchBar(props) {
             list="term"
             type="text"
             className="form-control"
-            placeholder="Type in a name to begin"
+            placeholder="Start typing to filter..."
             id="term"
           />
         </div>
