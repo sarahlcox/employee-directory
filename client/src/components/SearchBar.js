@@ -7,7 +7,7 @@ function SearchBar(props) {
     <div className="header">
       <form className="search">
         <div className="form-group">
-          <label htmlFor="employee-directory">Search: </label>
+          <label htmlFor="employee-directory"><h1>User Directory</h1></label>
           <input
             value={props.data.state.name}
             onChange={props.data.handleInputChange}
@@ -15,9 +15,11 @@ function SearchBar(props) {
             list="term"
             type="text"
             className="form-control"
-            placeholder="Start typing to filter..."
+            placeholder="Start typing a name to filter..."
             id="term"
           />
+          <br />
+          <p>*Click name to sort users by name</p>
         </div>
       </form>
     </div>
